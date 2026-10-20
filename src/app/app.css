@@ -21,76 +21,53 @@
   min-height: 72px;
 }
 
-/* Brand Emblem & Titles */
+/* Brand Logo & Titles */
 .brand-link {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   text-decoration: none;
 }
 
-.logo-emblem {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #38065b 0%, #b81b6c 100%);
+.brand-logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  font-weight: 800;
-  font-size: 1.15rem;
-  letter-spacing: -0.5px;
-  box-shadow: 0 4px 10px rgba(184, 27, 108, 0.3);
-  position: relative;
-  overflow: hidden;
-  border: 2px solid #ffffff;
-  flex-shrink: 0;
 }
 
-.logo-emblem::after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 25px;
-  height: 25px;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 50%;
+.brand-logo-img {
+  height: 48px;
+  width: auto;
+  max-width: 175px;
+  object-fit: contain;
+  transition: var(--transition);
 }
 
-.brand-titles {
-  display: flex;
-  flex-direction: column;
-}
-
-.brand-name {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #2b044d;
-  letter-spacing: 0.5px;
-  line-height: 1.2;
+.brand-link:hover .brand-logo-img {
+  transform: scale(1.02);
 }
 
 .brand-tagline-wrap {
   display: flex;
   flex-direction: column;
+  border-left: 2px solid #e7d8f0;
+  padding-left: 14px;
 }
 
 .brand-tagline-title {
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  color: #b81b6c;
+  color: #2b044d;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .brand-tagline-sub {
-  font-size: 0.62rem;
-  color: #6c637a;
+  font-size: 0.64rem;
+  color: #716682;
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 /* Desktop Navigation */
@@ -248,6 +225,23 @@
   grid-template-columns: 1.5fr 1fr 1.3fr;
   gap: 40px;
   margin-bottom: 40px;
+}
+
+.footer-logo-wrapper {
+  background: #ffffff;
+  padding: 8px 16px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.footer-logo-img {
+  height: 40px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
 }
 
 .footer-brand-title {
@@ -441,11 +435,18 @@
     display: block;
   }
 
-  .brand-name {
-    font-size: 1.02rem;
+  .brand-logo-img {
+    height: 38px;
+    max-width: 135px;
   }
 
   .brand-tagline-sub {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-tagline-wrap {
     display: none;
   }
 }
