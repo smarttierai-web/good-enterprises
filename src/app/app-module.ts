@@ -1,8 +1,17 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+
+/* Feature Modules for each page */
+import { HomeModule } from './pages/home/home-module';
+import { AboutModule } from './pages/about/about-module';
+import { ServicesModule } from './pages/services/services-module';
+import { WorkforceModule } from './pages/workforce/workforce-module';
+import { WhyChooseUsModule } from './pages/why-choose-us/why-choose-us-module';
+import { ContactModule } from './pages/contact/contact-module';
 
 @NgModule({
   declarations: [
@@ -10,6 +19,13 @@ import { App } from './app';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HomeModule,
+    AboutModule,
+    ServicesModule,
+    WorkforceModule,
+    WhyChooseUsModule,
+    ContactModule,
     AppRoutingModule
   ],
   providers: [

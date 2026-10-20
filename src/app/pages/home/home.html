@@ -1,0 +1,192 @@
+<!-- ==========================================================================
+     HERO SECTION
+     ========================================================================== -->
+<section class="hero-section">
+  <div class="hero-bg-overlay"></div>
+  <div class="container hero-container">
+    <div class="hero-content">
+      <span class="hero-top-badge">
+        <i class="fa-solid fa-industry"></i> Industrial Manpower Solutions
+      </span>
+      <h1 class="hero-title">
+        Professional Manpower<br class="d-none-sm"> Service Provider for<br class="d-none-sm"> Industries
+      </h1>
+      <p class="hero-subtitle">
+        Catering to companies in and around Ranipet, Ambur, Vellore, Ambattur, Sriperumbudur, and Vanagaram.
+      </p>
+      <div class="hero-actions">
+        <button type="button" class="btn-primary hero-btn-consultation" (click)="openRequirementModal()">
+          Get a Free Consultation
+        </button>
+        <a routerLink="/about" class="btn-secondary hero-btn-learn">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     MAIN CONTENT SECTION
+     ========================================================================== -->
+<section class="main-content-section">
+  <div class="container content-container">
+    
+    <!-- Top Block: Our Available Workforce -->
+    <div class="workforce-block">
+      <div class="section-header-wrap">
+        <h2 class="section-title">Our Available Workforce</h2>
+        <div class="section-title-line"></div>
+      </div>
+
+      <!-- 7 Workforce Category Cards arranged in 2 balanced rows -->
+      <div class="workforce-grid">
+        <!-- Row 1: 4 Cards -->
+        <div class="workforce-row row-4">
+          <!-- Card 1: ITI Qualified Candidates -->
+          <div class="workforce-card card-iti" (click)="openRequirementModal('ITI Qualified Candidates')">
+            <div class="card-icon-wrap icon-blue">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <h3 class="card-title">ITI Qualified Candidates</h3>
+          </div>
+
+          <!-- Card 2: Diploma Holders -->
+          <div class="workforce-card card-diploma" (click)="openRequirementModal('Diploma Holders')">
+            <div class="card-icon-wrap icon-teal">
+              <i class="fa-solid fa-file-contract"></i>
+            </div>
+            <h3 class="card-title">Diploma Holders</h3>
+          </div>
+
+          <!-- Card 3: Degree Graduates -->
+          <div class="workforce-card card-degree" (click)="openRequirementModal('Degree Graduates')">
+            <div class="card-icon-wrap icon-plum">
+              <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <h3 class="card-title">Degree Graduates</h3>
+          </div>
+
+          <!-- Card 4: 10th & 12th Pass -->
+          <div class="workforce-card card-school" (click)="openRequirementModal('10th & 12th Pass')">
+            <div class="card-icon-wrap icon-amber">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <h3 class="card-title">10th & 12th Pass</h3>
+          </div>
+        </div>
+
+        <!-- Row 2: 3 Cards Centered -->
+        <div class="workforce-row row-3">
+          <!-- Card 5: Male & Female Employees -->
+          <div class="workforce-card card-gender" (click)="openRequirementModal('Male & Female Employees')">
+            <div class="card-icon-wrap icon-rose">
+              <i class="fa-solid fa-user-group"></i>
+            </div>
+            <h3 class="card-title">Male & Female Employees</h3>
+          </div>
+
+          <!-- Card 6: Housekeeping Staff -->
+          <div class="workforce-card card-housekeeping" (click)="openRequirementModal('Housekeeping Staff')">
+            <div class="card-icon-wrap icon-purple">
+              <i class="fa-solid fa-spray-can-sparkles"></i>
+            </div>
+            <h3 class="card-title">Housekeeping Staff</h3>
+          </div>
+
+          <!-- Card 7: Helpers & General Workers -->
+          <div class="workforce-card card-helpers" (click)="openRequirementModal('Helpers & General Workers')">
+            <div class="card-icon-wrap icon-gold">
+              <i class="fa-solid fa-helmet-safety"></i>
+            </div>
+            <h3 class="card-title">Helpers & General Workers</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Middle Block: Why Partner With Us? -->
+    <div class="partner-block">
+      <div class="section-header-wrap">
+        <h2 class="section-title">Why Partner With Us?</h2>
+        <div class="section-title-line"></div>
+      </div>
+
+      <div class="partner-two-col">
+        <!-- Left Column: Our Key Strengths -->
+        <div class="partner-left-col">
+          <h3 class="column-subtitle">Our Key Strengths</h3>
+          <ul class="strengths-list">
+            <li class="strength-item">
+              <div class="strength-icon-box">
+                <i class="fa-solid fa-gear"></i>
+              </div>
+              <div class="strength-text">
+                <strong>Candidates available for immediate deployment</strong>
+              </div>
+            </li>
+            <li class="strength-item">
+              <div class="strength-icon-box">
+                <i class="fa-solid fa-gears"></i>
+              </div>
+              <div class="strength-text">
+                <strong>Both skilled & unskilled manpower</strong>
+              </div>
+            </li>
+            <li class="strength-item">
+              <div class="strength-icon-box">
+                <i class="fa-solid fa-scale-balanced"></i>
+              </div>
+              <div class="strength-text">
+                <strong>Tailored male/female workforce</strong>
+              </div>
+            </li>
+            <li class="strength-item">
+              <div class="strength-icon-box">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="strength-text">
+                <strong>Local talent for better attendance and stability</strong>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Column: Why Choose Us? (Lavender Card) -->
+        <div class="partner-right-col">
+          <div class="why-choose-card">
+            <h3 class="why-choose-title">Why Choose Us?</h3>
+            <ul class="check-list">
+              <li *ngFor="let item of whyChooseUsList" class="check-item">
+                <span class="check-icon">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span class="check-label">{{ item }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     CALL TO ACTION (CTA) BANNER
+     ========================================================================== -->
+<section class="cta-banner-section">
+  <div class="container cta-container">
+    <p class="cta-description">
+      If your organization requires manpower services, we would be glad to support your staffing needs. Request our company profile or send us your manpower requirements today!
+    </p>
+    <div class="cta-buttons">
+      <button type="button" class="btn-cta-outline" (click)="openProfileModal()">
+        Request Company Profile
+      </button>
+      <button type="button" class="btn-cta-white" (click)="openRequirementModal()">
+        Submit Requirements
+      </button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,99 @@
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="container page-hero-container">
+    <span class="hero-tag">Specialized Manpower Solutions</span>
+    <h1 class="page-hero-title">Industrial Manpower & Staffing Services</h1>
+    <p class="page-hero-sub">
+      Comprehensive staffing pipelines engineered to fuel factory productivity, eliminate assembly downtime, and guarantee complete statutory compliance.
+    </p>
+  </div>
+</section>
+
+<!-- Services Grid -->
+<section class="page-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="sub-heading text-center">Our Industrial Service Portfolio</h2>
+      <div class="heading-line center"></div>
+      <p class="section-lead-center">
+        Tailored for automotive, electronics, leather, pharmaceuticals, logistics, and heavy engineering plants.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let s of servicesList">
+        <div class="service-top">
+          <div class="service-icon-box">
+            <i [class]="s.icon"></i>
+          </div>
+          <span class="service-category-badge">{{ s.category }}</span>
+        </div>
+
+        <h3 class="service-card-title">{{ s.title }}</h3>
+        <p class="service-card-desc">{{ s.desc }}</p>
+
+        <div class="service-benefits">
+          <span class="benefits-label">Key Highlights:</span>
+          <ul class="benefits-list">
+            <li *ngFor="let b of s.benefits">
+              <i class="fa-solid fa-check"></i> {{ b }}
+            </li>
+          </ul>
+        </div>
+
+        <button type="button" class="btn-service-hire" (click)="openRequirementModal(s.title)">
+          <span>Request Personnel</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Process -->
+<section class="page-section section-tint">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="sub-heading text-center">Our Deployment Process</h2>
+      <div class="heading-line center"></div>
+      <p class="section-lead-center">From requirement requisition to on-site shift commencement in 4 simple steps</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <h4 class="step-title">Requirement Intake</h4>
+        <p class="step-desc">Detailed assessment of plant shifts, technical trade qualifications, headcount, and safety gear requirements.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <h4 class="step-title">Local Pool Screening</h4>
+        <p class="step-desc">Candidate document verification (Aadhaar, education certificates, police clearance, and trade test checks).</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <h4 class="step-title">Safety & Shift Induction</h4>
+        <p class="step-desc">Preliminary workplace safety training, 5S awareness, and workplace discipline briefing prior to entry.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <h4 class="step-title">On-Site Mobilization</h4>
+        <p class="step-desc">Dedicated field officer presence for biometric check-in, attendance stability, and daily shift coordination.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Bar -->
+<section class="cta-banner-section">
+  <div class="container cta-container">
+    <p class="cta-description">
+      Need urgent skilled or unskilled workforce for your upcoming shift? Talk to our staffing team now.
+    </p>
+    <div class="cta-buttons">
+      <button type="button" class="btn-cta-outline" (click)="openProfileModal()">Download Rate Card & Profile</button>
+      <button type="button" class="btn-cta-white" (click)="openRequirementModal()">Request Staffing Now</button>
+    </div>
+  </div>
+</section>

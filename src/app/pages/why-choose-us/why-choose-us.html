@@ -1,0 +1,91 @@
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="container page-hero-container">
+    <span class="hero-tag">The Preferred Staffing Partner</span>
+    <h1 class="page-hero-title">Why Partner With Good Enterprises?</h1>
+    <p class="page-hero-sub">
+      Delivering the competitive edge through disciplined local workforce, rapid mobilization, and total statutory compliance.
+    </p>
+  </div>
+</section>
+
+<!-- The 5 Core Pillars -->
+<section class="page-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="sub-heading text-center">Our 5 Pillars of Excellence</h2>
+      <div class="heading-line center"></div>
+      <p class="section-lead-center">
+        Built on trust, speed, and continuous support for manufacturing plants across Tamil Nadu.
+      </p>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar-card" *ngFor="let p of pillars">
+        <div class="pillar-icon">
+          <i [class]="p.icon"></i>
+        </div>
+        <h3 class="pillar-title">{{ p.title }}</h3>
+        <p class="pillar-desc">{{ p.desc }}</p>
+        <ul class="pillar-bullets">
+          <li *ngFor="let pt of p.points">
+            <i class="fa-solid fa-circle-check"></i> {{ pt }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison Table: Good Enterprises vs. Others -->
+<section class="page-section section-tint">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="sub-heading text-center">How We Compare</h2>
+      <div class="heading-line center"></div>
+      <p class="section-lead-center">
+        Why leading plant managers switch from informal contractors to Good Enterprises
+      </p>
+    </div>
+
+    <div class="table-responsive">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Key Metric / Service Area</th>
+            <th class="brand-col-header">
+              <span class="badge-recommend">Recommended</span>
+              GOOD ENTERPRISES
+            </th>
+            <th>Unorganized Contractors</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of comparisonPoints">
+            <td class="feature-name"><strong>{{ row.feature }}</strong></td>
+            <td class="brand-cell">
+              <i class="fa-solid fa-circle-check"></i> {{ row.goodEnterprises }}
+            </td>
+            <td class="others-cell">
+              <i class="fa-solid fa-circle-xmark"></i> {{ row.others }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Bar -->
+<section class="cta-banner-section">
+  <div class="container cta-container">
+    <p class="cta-description">
+      Experience the difference of a professional manpower partner. Request a consultation with our industrial staffing advisors today.
+    </p>
+    <div class="cta-buttons">
+      <button type="button" class="btn-cta-outline" (click)="openProfileModal()">Request Company Profile</button>
+      <button type="button" class="btn-cta-white" (click)="openRequirementModal()">Submit Requirements</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,109 @@
+<!-- Page Banner -->
+<section class="page-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="container page-hero-container">
+    <span class="hero-tag">About Good Enterprises</span>
+    <h1 class="page-hero-title">Delivering Dependable Industrial Workforce Solutions</h1>
+    <p class="page-hero-sub">
+      A dedicated manpower service provider catering to leading factories, manufacturing plants, and warehouses across Tamil Nadu.
+    </p>
+  </div>
+</section>
+
+<!-- Company Overview & Stats -->
+<section class="page-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text-content">
+        <h2 class="sub-heading">Who We Are</h2>
+        <div class="heading-line"></div>
+        <p class="lead-text">
+          <strong>GOOD ENTERPRISES</strong> is an established manpower service provider specialized in sourcing, screening, mobilizing, and managing skilled and unskilled industrial personnel.
+        </p>
+        <p>
+          We bridge the gap between manufacturing enterprises and verified local talent across key industrial belts including Ranipet, Ambur, Vellore, Ambattur, Sriperumbudur, and Vanagaram. Our operations ensure rapid recruitment turnaround, rigorous statutory adherence, and proactive attendance management.
+        </p>
+        <p>
+          Whether your facility demands continuous three-shift operations, seasonal surge handling, or specialized technical operators, Good Enterprises guarantees high retention and disciplined workplace conduct.
+        </p>
+
+        <div class="values-row">
+          <div class="value-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+              <strong>100% Legal Compliance</strong>
+              <span>Strict compliance with EPF, ESI, Factory Act & labor regulations.</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <div>
+              <strong>Rapid Mobilization</strong>
+              <span>Immediate deployment within 24 to 48 hours for urgent shifts.</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <i class="fa-solid fa-handshake"></i>
+            <div>
+              <strong>Tailored Contracts</strong>
+              <span>Short-term, long-term, and seasonal flexible staffing models.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Box -->
+      <div class="about-stats-card">
+        <h3 class="stats-card-title">Good Enterprises in Numbers</h3>
+        <div class="stats-grid">
+          <div class="stat-box" *ngFor="let stat of stats">
+            <span class="stat-num">{{ stat.value }}</span>
+            <span class="stat-lbl">{{ stat.label }}</span>
+          </div>
+        </div>
+
+        <div class="stats-action">
+          <button type="button" class="btn-primary w-100" (click)="openProfileModal()">
+            <i class="fa-solid fa-file-pdf"></i> Request Full Corporate Profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Industrial Belts Served -->
+<section class="page-section section-tint">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="sub-heading text-center">Industrial Corridors We Serve</h2>
+      <div class="heading-line center"></div>
+      <p class="section-lead-center">
+        Strategic presence and localized talent pools across Tamil Nadu’s key manufacturing hubs
+      </p>
+    </div>
+
+    <div class="locations-grid">
+      <div class="loc-card" *ngFor="let loc of locations">
+        <div class="loc-icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <h3 class="loc-name">{{ loc.name }}</h3>
+        <p class="loc-desc">{{ loc.desc }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Bar -->
+<section class="cta-banner-section">
+  <div class="container cta-container">
+    <p class="cta-description">
+      Partner with Good Enterprises today and optimize your factory’s staffing efficiency and shift productivity.
+    </p>
+    <div class="cta-buttons">
+      <button type="button" class="btn-cta-outline" (click)="openProfileModal()">Request Company Profile</button>
+      <button type="button" class="btn-cta-white" (click)="openRequirementModal()">Submit Requirements</button>
+    </div>
+  </div>
+</section>

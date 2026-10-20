@@ -1,0 +1,142 @@
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="container page-hero-container">
+    <span class="hero-tag">Vetted Industrial Talent</span>
+    <h1 class="page-hero-title">Our Available Industrial Workforce</h1>
+    <p class="page-hero-sub">
+      From certified ITI technicians and diploma supervisors to disciplined assembly operators and reliable factory helpers.
+    </p>
+  </div>
+</section>
+
+<!-- Workforce Matrix Section -->
+<section class="page-section">
+  <div class="container">
+    
+    <!-- Filter Tabs -->
+    <div class="tabs-container">
+      <button 
+        type="button" 
+        class="tab-btn" 
+        [class.active]="selectedTab === 'all'" 
+        (click)="setTab('all')">
+        All Categories (7)
+      </button>
+      <button 
+        type="button" 
+        class="tab-btn" 
+        [class.active]="selectedTab === 'technical'" 
+        (click)="setTab('technical')">
+        Technical & Engineering
+      </button>
+      <button 
+        type="button" 
+        class="tab-btn" 
+        [class.active]="selectedTab === 'operations'" 
+        (click)="setTab('operations')">
+        Assembly & Operations
+      </button>
+      <button 
+        type="button" 
+        class="tab-btn" 
+        [class.active]="selectedTab === 'support'" 
+        (click)="setTab('support')">
+        Helpers & Housekeeping
+      </button>
+    </div>
+
+    <!-- Category Detail Cards -->
+    <div class="wf-details-grid">
+      <div class="wf-detail-card" *ngFor="let item of filteredCategories">
+        <div class="wf-card-header" [style.background]="item.badgeBg">
+          <div class="wf-header-icon">
+            <i [class]="item.icon"></i>
+          </div>
+          <div class="wf-header-info">
+            <h3 class="wf-item-title">{{ item.title }}</h3>
+            <span class="wf-qual-badge">{{ item.qualifications }}</span>
+          </div>
+        </div>
+
+        <div class="wf-card-body">
+          <div class="wf-info-row">
+            <span class="wf-info-label"><i class="fa-solid fa-tools"></i> Key Roles / Trades:</span>
+            <div class="trade-tags">
+              <span class="trade-tag" *ngFor="let trade of item.trades">{{ trade }}</span>
+            </div>
+          </div>
+
+          <div class="wf-specs-grid">
+            <div class="wf-spec-item">
+              <span class="spec-label">Experience:</span>
+              <span class="spec-val">{{ item.experience }}</span>
+            </div>
+            <div class="wf-spec-item">
+              <span class="spec-label">Mobilization Speed:</span>
+              <span class="spec-val highlight-green">{{ item.availability }}</span>
+            </div>
+            <div class="wf-spec-item">
+              <span class="spec-label">Target Industries:</span>
+              <span class="spec-val">{{ item.industries }}</span>
+            </div>
+          </div>
+
+          <div class="wf-card-footer">
+            <button type="button" class="btn-primary w-100" (click)="openRequirementModal(item.title)">
+              <i class="fa-solid fa-user-plus"></i> Request Candidates for this Category
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Candidate Verification Pipeline -->
+<section class="page-section section-tint">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="sub-heading text-center">Rigorous 4-Point Background Verification</h2>
+      <div class="heading-line center"></div>
+      <p class="section-lead-center">Every candidate deployed to your facility undergoes thorough screening before step-in</p>
+    </div>
+
+    <div class="verify-grid">
+      <div class="verify-card">
+        <div class="verify-icon"><i class="fa-solid fa-id-card"></i></div>
+        <h4>Identity & Biometrics</h4>
+        <p>Aadhaar authentication, bank account linkage, and residential address verification.</p>
+      </div>
+      <div class="verify-card">
+        <div class="verify-icon"><i class="fa-solid fa-stamp"></i></div>
+        <h4>Certificate Validation</h4>
+        <p>Direct verification of ITI, Diploma, and 10th/12th marksheets with educational institutions.</p>
+      </div>
+      <div class="verify-card">
+        <div class="verify-icon"><i class="fa-solid fa-user-shield"></i></div>
+        <h4>Police Clearance & Reference</h4>
+        <p>Previous employer background verification and local police character checking.</p>
+      </div>
+      <div class="verify-card">
+        <div class="verify-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <h4>Fitness & Medical Screen</h4>
+        <p>Physical fitness checks ensuring ability to handle plant shift demands safely.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Bar -->
+<section class="cta-banner-section">
+  <div class="container cta-container">
+    <p class="cta-description">
+      Looking for custom workforce staffing for your specific industrial manufacturing processes?
+    </p>
+    <div class="cta-buttons">
+      <button type="button" class="btn-cta-outline" (click)="openProfileModal()">Request Workforce Profile</button>
+      <button type="button" class="btn-cta-white" (click)="openRequirementModal()">Submit Candidate Requirements</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,192 @@
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="container page-hero-container">
+    <span class="hero-tag">Reach Good Enterprises</span>
+    <h1 class="page-hero-title">Contact Our Staffing Specialists</h1>
+    <p class="page-hero-sub">
+      Looking for immediate skilled or general manpower for your industrial plant? Send us your requirements or call our hotline directly.
+    </p>
+  </div>
+</section>
+
+<!-- Contact Form & Info Grid -->
+<section class="page-section">
+  <div class="container">
+    <div class="contact-grid">
+      
+      <!-- Contact Information Cards -->
+      <div class="contact-info-col">
+        <h2 class="sub-heading">Get in Touch</h2>
+        <div class="heading-line"></div>
+        <p class="contact-lead-desc">
+          We are available 6 days a week with round-the-clock shift support for emergency factory staffing requirements.
+        </p>
+
+        <div class="info-cards">
+          <!-- Card 1: Phone -->
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="info-details">
+              <span class="info-title">Phone & WhatsApp Support</span>
+              <div class="phone-links">
+                <a href="tel:7418945855" class="contact-link">74189 45855</a>
+                <span class="divider">/</span>
+                <a href="tel:9514080033" class="contact-link">95140 80033</a>
+              </div>
+              <span class="info-note">Immediate response for shift supervisors</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Email -->
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="info-details">
+              <span class="info-title">Corporate Email</span>
+              <a href="mailto:goodenterprises2025@gmail.com" class="contact-link">goodenterprises2025&#64;gmail.com</a>
+              <span class="info-note">Send RFP, vendor empanelment & rate queries</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Locations Served -->
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="info-details">
+              <span class="info-title">Operational Presence</span>
+              <p class="locations-inline">
+                Ranipet, Ambur, Vellore, Ambattur, Sriperumbudur, and Vanagaram.
+              </p>
+              <span class="info-note">Serving all SIPCOT, SIDCO & SEZ industrial zones</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Working Hours Badge -->
+        <div class="hours-badge">
+          <i class="fa-solid fa-business-time"></i>
+          <div>
+            <strong>Operations Hours:</strong> Mon - Sat: 8:00 AM - 8:00 PM<br>
+            <span>24/7 Field Coordinator Support for Night Shifts</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-col">
+        <div class="form-container-card">
+          <h3 class="form-card-title">Send Manpower Requirements</h3>
+          <p class="form-card-sub">Fill out the requisition form below for an instant staffing estimate.</p>
+
+          <div *ngIf="submitted" class="toast-success">
+            <i class="fa-solid fa-circle-check fa-lg"></i>
+            <div>
+              <strong>Requisition Received!</strong><br>
+              Thank you for contacting Good Enterprises. Our industrial staffing officer will reach out to {{ formData.phone }} within 2 hours.
+            </div>
+          </div>
+
+          <form (ngSubmit)="submitContact()" *ngIf="!submitted">
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label">Contact Person Name *</label>
+                <input type="text" [(ngModel)]="formData.name" name="name" required class="form-input" placeholder="e.g. S. Murugan">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Company / Factory Name *</label>
+                <input type="text" [(ngModel)]="formData.company" name="company" required class="form-input" placeholder="e.g. Precision Engineering Ltd">
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label">Mobile / WhatsApp Number *</label>
+                <input type="tel" [(ngModel)]="formData.phone" name="phone" required class="form-input" placeholder="e.g. 98765 43210">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Official Email</label>
+                <input type="email" [(ngModel)]="formData.email" name="email" class="form-input" placeholder="hr@factory.com">
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label">Plant Location</label>
+                <select [(ngModel)]="formData.location" name="location" class="form-select">
+                  <option value="Ranipet">Ranipet SIPCOT / SIDCO</option>
+                  <option value="Ambur">Ambur Industrial Area</option>
+                  <option value="Vellore">Vellore Hub</option>
+                  <option value="Ambattur">Ambattur Industrial Estate</option>
+                  <option value="Sriperumbudur">Sriperumbudur SIPCOT</option>
+                  <option value="Vanagaram">Vanagaram Logistics Belt</option>
+                  <option value="Other">Other Tamil Nadu Location</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Candidate Category</label>
+                <select [(ngModel)]="formData.category" name="category" class="form-select">
+                  <option value="ITI Qualified Candidates">ITI Qualified Candidates</option>
+                  <option value="Diploma Holders">Diploma Holders</option>
+                  <option value="Degree Graduates">Degree Graduates</option>
+                  <option value="10th & 12th Pass">10th & 12th Pass</option>
+                  <option value="Male & Female Employees">Male & Female Employees</option>
+                  <option value="Housekeeping Staff">Housekeeping Staff</option>
+                  <option value="Helpers & General Workers">Helpers & General Workers</option>
+                  <option value="Multiple Categories">Multiple Categories</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label">Headcount Required</label>
+                <input type="number" min="1" [(ngModel)]="formData.headcount" name="headcount" class="form-input" placeholder="e.g. 20">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Mobilization Urgency</label>
+                <select [(ngModel)]="formData.timeline" name="timeline" class="form-select">
+                  <option value="Immediate (Within 48 Hours)">Immediate (Within 48 Hours)</option>
+                  <option value="Within 1 Week">Within 1 Week</option>
+                  <option value="Next Month Shift Start">Next Month Shift Start</option>
+                  <option value="Rate Inquiry Only">Rate Inquiry Only</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Specific Trade or Operational Notes</label>
+              <textarea rows="3" [(ngModel)]="formData.message" name="message" class="form-textarea" placeholder="Detail specific skills required (e.g. Fitter, CNC Operator, 3-shift rotation, safety shoes provided)..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary w-100" style="padding: 14px;">
+              <i class="fa-solid fa-paper-plane"></i> Submit Manpower Inquiry
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQs Section -->
+<section class="page-section section-tint">
+  <div class="container" style="max-width: 860px;">
+    <div class="text-center mb-5">
+      <h2 class="sub-heading text-center">Frequently Asked Questions</h2>
+      <div class="heading-line center"></div>
+      <p class="section-lead-center">Answers to common questions from plant heads and HR leaders</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item" *ngFor="let item of faqs; let i = index" [class.open]="item.open">
+        <button type="button" class="faq-question" (click)="toggleFaq(i)">
+          <span>{{ item.q }}</span>
+          <i class="fa-solid" [ngClass]="item.open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+        </button>
+        <div class="faq-answer" *ngIf="item.open">
+          <p>{{ item.a }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
