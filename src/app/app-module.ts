@@ -12,6 +12,8 @@ import { ServicesModule } from './pages/services/services-module';
 import { WorkforceModule } from './pages/workforce/workforce-module';
 import { WhyChooseUsModule } from './pages/why-choose-us/why-choose-us-module';
 import { ContactModule } from './pages/contact/contact-module';
+import { TermsModule } from './pages/terms/terms-module';
+import { PrivacyModule } from './pages/privacy/privacy-module';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { ContactModule } from './pages/contact/contact-module';
     WorkforceModule,
     WhyChooseUsModule,
     ContactModule,
+    TermsModule,
+    PrivacyModule,
     AppRoutingModule
   ],
   providers: [

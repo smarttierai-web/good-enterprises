@@ -394,9 +394,38 @@
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 20px;
-  text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: #8c8299;
+}
+
+.footer-bottom-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer-legal-links a {
+  color: #bbb0c7;
+  transition: var(--transition);
+}
+
+.footer-legal-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.legal-separator {
+  color: #5d526e;
+  font-size: 0.7rem;
 }
 
 /* Modal Form Utilities */

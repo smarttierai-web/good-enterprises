@@ -132,6 +132,7 @@
           <li><a routerLink="/workforce">Workforce</a></li>
           <li><a routerLink="/why-choose-us">Why Choose Us</a></li>
           <li><a routerLink="/contact">Contact Us</a></li>
+          <li><a href="/assets/company-profile.pdf" target="_blank" download="Good-Enterprises-Company-Profile.pdf" style="color: #f9a8d4; font-weight: 600;"><i class="fa-solid fa-file-pdf"></i> Company Profile (PDF)</a></li>
         </ul>
       </div>
 
@@ -148,7 +149,7 @@
             <div class="phone-numbers">
               <a href="tel:7418945855">74189 45855</a>
               <span class="phone-divider">/</span>
-              <a href="tel:9514080033">95140 80033</a>
+              <a href="tel:9514088033">95140 88033</a>
             </div>
           </li>
           <li>
@@ -168,9 +169,18 @@
       </div>
     </div>
 
-    <!-- Bottom Copyright -->
+    <!-- Bottom Copyright & Legal Links -->
     <div class="footer-bottom">
-      <p>Copyright &copy; 2026 GOOD ENTERPRISES. All rights reserved.</p>
+      <div class="footer-bottom-flex">
+        <p>Copyright &copy; 2026 GOOD ENTERPRISES. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a routerLink="/terms">Terms of Service</a>
+          <span class="legal-separator">•</span>
+          <a routerLink="/privacy">Privacy Policy</a>
+          <span class="legal-separator">•</span>
+          <a href="/assets/company-profile.pdf" target="_blank" download="Good-Enterprises-Company-Profile.pdf">Corporate Profile</a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
@@ -277,30 +287,38 @@
       <div *ngIf="profileRequested" class="toast-success">
         <i class="fa-solid fa-circle-check fa-lg"></i>
         <div>
-          <strong>Company Profile Sent!</strong><br>
-          A copy of our corporate brochure has been dispatched to <em>{{ profileEmail }}</em>.
+          <strong>Company Profile Dispatched!</strong><br>
+          A copy has been recorded for <em>{{ profileEmail }}</em>. You can also download it directly below.
         </div>
       </div>
 
-      <div *ngIf="!profileRequested">
-        <p style="color: var(--text-body); margin-bottom: 16px; line-height: 1.5;">
-          Download or receive our comprehensive company profile covering statutory compliance, labor certifications, client list, and rate cards.
+      <div class="profile-download-card" style="background: #faf5fd; border: 1.5px solid #ebd4f7; border-radius: 12px; padding: 18px; margin-bottom: 20px;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <i class="fa-solid fa-file-pdf fa-3x" style="color: #b81b6c;"></i>
+          <div>
+            <strong style="color: #260447; font-size: 1rem;">Good-Enterprises-Company-Profile.pdf</strong>
+            <p style="font-size: 0.8rem; color: #6b7280; margin: 3px 0 0;">4-Page Official Document (150 KB) • Includes Rate Cards, SLAs & Compliance Dossier</p>
+          </div>
+        </div>
+        <a href="/assets/company-profile.pdf" target="_blank" download="Good-Enterprises-Company-Profile.pdf" class="btn-primary w-100" style="margin-top: 14px; text-decoration: none; padding: 12px;">
+          <i class="fa-solid fa-download"></i> Download Profile Now (PDF)
+        </a>
+      </div>
+
+      <div *ngIf="!profileRequested" style="border-top: 1px solid #f0e6f6; padding-top: 16px;">
+        <p style="color: var(--text-dark); font-size: 0.88rem; font-weight: 600; margin-bottom: 12px;">
+          Or receive a corporate copy directly in your email:
         </p>
 
         <form (ngSubmit)="submitProfileRequest()">
           <div class="form-group">
-            <label class="form-label">Corporate Email Address *</label>
+            <label class="form-label">Corporate Email Address</label>
             <input type="email" [(ngModel)]="profileEmail" name="profileEmail" required class="form-input" placeholder="hr@company.com">
           </div>
 
-          <div style="display: flex; gap: 12px; margin-top: 20px;">
-            <button type="submit" class="btn-primary" style="flex: 1;">
-              <i class="fa-solid fa-envelope"></i> Send to Email
-            </button>
-            <button type="button" class="btn-secondary" style="flex: 1; background: var(--primary-dark); color: #fff;" (click)="submitProfileRequest()">
-              <i class="fa-solid fa-download"></i> Instant Preview
-            </button>
-          </div>
+          <button type="submit" class="btn-secondary w-100" style="background: var(--primary-dark); color: #fff; padding: 11px;">
+            <i class="fa-solid fa-envelope"></i> Send to Email
+          </button>
         </form>
       </div>
     </div>
