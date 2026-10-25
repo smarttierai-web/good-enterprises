@@ -2,10 +2,10 @@
 <section class="page-hero">
   <div class="page-hero-overlay"></div>
   <div class="container page-hero-container">
-    <span class="hero-tag">About Good Enterprises</span>
-    <h1 class="page-hero-title">Delivering Dependable Industrial Workforce Solutions</h1>
+    <span class="hero-tag">"Providing the Right People for the Right Job"</span>
+    <h1 class="page-hero-title">About Good Enterprises</h1>
     <p class="page-hero-sub">
-      A dedicated manpower service provider catering to leading factories, manufacturing plants, and warehouses across Tamil Nadu.
+      Your trusted partner for reliable manpower solutions and industrial support services across manufacturing, engineering, and commercial establishments.
     </p>
   </div>
 </section>
@@ -15,46 +15,55 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-text-content">
-        <h2 class="sub-heading">Who We Are</h2>
+        <h2 class="sub-heading">About Us</h2>
         <div class="heading-line"></div>
         <p class="lead-text">
-          <strong>GOOD ENTERPRISES</strong> is an established manpower service provider specialized in sourcing, screening, mobilizing, and managing skilled and unskilled industrial personnel.
+          <strong>Good Enterprises</strong> is a professionally managed service organization providing reliable manpower solutions and industrial support services to manufacturing industries, engineering companies, research laboratories, and commercial establishments.
         </p>
         <p>
-          We bridge the gap between manufacturing enterprises and verified local talent across key industrial belts including Ranipet, Ambur, Vellore, Ambattur, Sriperumbudur, and Vanagaram. Our operations ensure rapid recruitment turnaround, rigorous statutory adherence, and proactive attendance management.
-        </p>
-        <p>
-          Whether your facility demands continuous three-shift operations, seasonal surge handling, or specialized technical operators, Good Enterprises guarantees high retention and disciplined workplace conduct.
+          With a commitment to quality, compliance, and customer satisfaction, we deliver skilled, semi-skilled, and unskilled workforce solutions tailored to the specific requirements of our clients. Our objective is to support organizations in achieving operational excellence through dependable manpower deployment and efficient facility support services.
         </p>
 
-        <div class="values-row">
-          <div class="value-item">
-            <i class="fa-solid fa-shield-halved"></i>
-            <div>
-              <strong>100% Legal Compliance</strong>
-              <span>Strict compliance with EPF, ESI, Factory Act & labor regulations.</span>
+        <!-- Mission & Vision Cards (From Page 1 of Official Document) -->
+        <div class="mv-cards-row">
+          <div class="mv-card mission-card">
+            <div class="mv-header">
+              <i class="fa-solid fa-bullseye"></i>
+              <h3>Our Mission</h3>
             </div>
+            <p>
+              To provide reliable manpower and industrial support services that enhance productivity, operational efficiency, and business growth for our clients.
+            </p>
           </div>
-          <div class="value-item">
-            <i class="fa-solid fa-clock-rotate-left"></i>
-            <div>
-              <strong>Rapid Mobilization</strong>
-              <span>Immediate deployment within 24 to 48 hours for urgent shifts.</span>
+
+          <div class="mv-card vision-card">
+            <div class="mv-header">
+              <i class="fa-solid fa-eye"></i>
+              <h3>Our Vision</h3>
             </div>
+            <p>
+              To become one of the most trusted manpower and industrial service providers in Tamil Nadu by delivering excellence, integrity, and customer satisfaction.
+            </p>
           </div>
-          <div class="value-item">
-            <i class="fa-solid fa-handshake"></i>
-            <div>
-              <strong>Tailored Contracts</strong>
-              <span>Short-term, long-term, and seasonal flexible staffing models.</span>
-            </div>
-          </div>
+        </div>
+
+        <!-- Why Choose Good Enterprises Points (From Page 2 of Official Document) -->
+        <div class="why-choose-list-box">
+          <h3 class="why-choose-heading">Why Choose Good Enterprises?</h3>
+          <ul class="why-choose-bullets">
+            <li><i class="fa-solid fa-circle-check"></i> <strong>Experienced and Professional Team</strong> – Specialized management of factory shifts and technical staffing</li>
+            <li><i class="fa-solid fa-circle-check"></i> <strong>Timely Manpower Deployment</strong> – Mobilization within 24–48 hours to minimize plant downtime</li>
+            <li><i class="fa-solid fa-circle-check"></i> <strong>Cost-Effective Service Solutions</strong> – Transparent statutory rate structures</li>
+            <li><i class="fa-solid fa-circle-check"></i> <strong>Quality-Focused Operations</strong> – Strict candidate screening and trade verification</li>
+            <li><i class="fa-solid fa-circle-check"></i> <strong>Reliable and Prompt Service Support</strong> – Dedicated on-site field officers</li>
+          </ul>
         </div>
       </div>
 
-      <!-- Stats Box -->
+      <!-- Stats & Business Details Box -->
       <div class="about-stats-card">
-        <h3 class="stats-card-title">Good Enterprises in Numbers</h3>
+        <h3 class="stats-card-title">Good Enterprises at a Glance</h3>
+        
         <div class="stats-grid">
           <div class="stat-box" *ngFor="let stat of stats">
             <span class="stat-num">{{ stat.value }}</span>
@@ -62,11 +71,94 @@
           </div>
         </div>
 
-        <div class="stats-action">
-          <button type="button" class="btn-primary w-100" (click)="openProfileModal()">
-            <i class="fa-solid fa-file-pdf"></i> Request Full Corporate Profile
-          </button>
+        <!-- Official Registered Business Details (From Page 2 of Official Document) -->
+        <div class="official-business-card">
+          <h4 class="business-card-title"><i class="fa-solid fa-building-circle-check"></i> Business Registration</h4>
+          
+          <div class="biz-info-item">
+            <span class="biz-lbl">Registered Office:</span>
+            <span class="biz-val">{{ businessDetails.address }}</span>
+          </div>
+
+          <div class="biz-info-item">
+            <span class="biz-lbl">Contact Mobiles:</span>
+            <span class="biz-val highlight-pink">
+              <a href="tel:7418945855">7418945855</a> | 
+              <a href="tel:8122045855">8122045855</a> | 
+              <a href="tel:7845545855">7845545855</a>
+            </span>
+          </div>
+
+          <div class="biz-info-item">
+            <span class="biz-lbl">Official Email:</span>
+            <span class="biz-val">{{ businessDetails.email }}</span>
+          </div>
+
+          <div class="biz-info-item">
+            <span class="biz-lbl">GSTIN:</span>
+            <span class="biz-val highlight-gold">{{ businessDetails.gstin }}</span>
+          </div>
+
+          <div class="biz-info-item">
+            <span class="biz-lbl">Proprietrix:</span>
+            <span class="biz-val">{{ businessDetails.proprietrix }}</span>
+          </div>
         </div>
+
+        <div class="stats-action">
+          <a href="/assets/company-profile.pdf" target="_blank" download="Good-Enterprises-Company-Profile.pdf" class="btn-primary w-100" style="text-decoration: none;">
+            <i class="fa-solid fa-file-pdf"></i> Download Official Profile (PDF)
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Official Customers Showcase (From Page 2 of Official Document) -->
+<section class="page-section section-tint">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="sub-heading text-center">Our Valuable Customers</h2>
+      <div class="heading-line center"></div>
+      <p class="section-lead-center">
+        We are proud to serve reputed organizations and contribute to their operational success:
+      </p>
+    </div>
+
+    <div class="customers-two-cards">
+      <div class="cust-card" *ngFor="let c of customers">
+        <div class="cust-icon"><i [class]="c.icon"></i></div>
+        <div class="cust-content">
+          <h3 class="cust-title">{{ c.name }}</h3>
+          <div class="cust-service-badge">
+            <span class="svc-lbl">Deployed Workforce / Service:</span>
+            <span class="svc-val">{{ c.service }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Statutory Registration Dossier -->
+<section class="page-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="sub-heading text-center">Statutory & Labor Compliance Dossier</h2>
+      <div class="heading-line center"></div>
+      <p class="section-lead-center">
+        100% legal compliance with government authorities. Verified establishment certificates and codes:
+      </p>
+    </div>
+
+    <div class="registrations-grid">
+      <div class="reg-item-card" *ngFor="let r of registrations">
+        <div class="reg-header">
+          <span class="reg-title">{{ r.title }}</span>
+          <span class="reg-code">{{ r.code }}</span>
+        </div>
+        <p class="reg-desc">{{ r.desc }}</p>
       </div>
     </div>
   </div>
@@ -102,8 +194,12 @@
       Partner with Good Enterprises today and optimize your factory’s staffing efficiency and shift productivity.
     </p>
     <div class="cta-buttons">
-      <button type="button" class="btn-cta-outline" (click)="openProfileModal()">Request Company Profile</button>
-      <button type="button" class="btn-cta-white" (click)="openRequirementModal()">Submit Requirements</button>
+      <a href="/assets/company-profile.pdf" target="_blank" download="Good-Enterprises-Company-Profile.pdf" class="btn-cta-outline" style="text-decoration: none;">
+        <i class="fa-solid fa-file-pdf"></i> Download Company Profile
+      </a>
+      <button type="button" class="btn-cta-white" (click)="openRequirementModal()">
+        Submit Requirements
+      </button>
     </div>
   </div>
 </section>

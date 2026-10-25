@@ -362,6 +362,103 @@
 }
 
 /* --------------------------------------------------------------------------
+   OUR VALUABLE CUSTOMERS (Client Cards)
+   -------------------------------------------------------------------------- */
+.customers-block {
+  margin-top: 10px;
+}
+
+.clients-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.client-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1.5px solid #ebd8f5;
+  box-shadow: 0 4px 18px rgba(38, 4, 71, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: var(--transition);
+}
+
+.client-card:hover {
+  transform: translateY(-4px);
+  border-color: #d896ea;
+  box-shadow: 0 12px 28px rgba(184, 27, 108, 0.16);
+}
+
+.client-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #38065b 0%, #b81b6c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(184, 27, 108, 0.3);
+}
+
+.client-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.client-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #240242;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.client-location {
+  font-size: 0.82rem;
+  color: #635b70;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.client-location i {
+  color: var(--accent-magenta);
+}
+
+.client-deployment-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fbf2fd;
+  border: 1px solid #ebd1f7;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-top: 6px;
+  width: max-content;
+}
+
+.badge-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #716682;
+  text-transform: uppercase;
+}
+
+.badge-value {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #b81b6c;
+}
+
+/* --------------------------------------------------------------------------
    CALL TO ACTION (CTA) BANNER
    -------------------------------------------------------------------------- */
 .cta-banner-section {

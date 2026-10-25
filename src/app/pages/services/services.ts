@@ -20,46 +20,74 @@ export class Services {
 
   servicesList: ServiceItem[] = [
     {
-      icon: 'fa-solid fa-industry',
-      title: 'Contractual Industrial Staffing',
-      category: 'Manufacturing & Plants',
-      desc: 'Flexible staffing solutions designed to scale plant capacity up or down according to seasonal surges, export deadlines, or multi-shift demands.',
-      benefits: ['Zero long-term headcount liability', 'Replacement guarantee within 24 hours', 'Pre-screened candidates']
+      icon: 'fa-solid fa-users-gear',
+      title: 'Manpower Supply Services',
+      category: 'Core Staffing',
+      desc: 'Complete industrial workforce solutions providing skilled, semi-skilled, and unskilled talent tailored to the precise shift requirements of factories and plants.',
+      benefits: [
+        'Production Helpers & Machine Helpers',
+        'Assembly Workers & Packers',
+        'Warehouse Helpers & Material Handlers',
+        'Quality Inspection Staff (QA/QC)',
+        'Administrative & Office Support Staff'
+      ]
+    },
+    {
+      icon: 'fa-solid fa-broom',
+      title: 'Housekeeping & Facility Services',
+      category: 'Facility Hygiene',
+      desc: 'Professional cleaning and sanitized facility management for manufacturing shop-floors, research laboratories, corporate offices, and cafeterias.',
+      benefits: [
+        'Industrial Housekeeping & 5S Floor Scrubbing',
+        'Office Housekeeping & Pantry Attendants',
+        'Chemical-safe sanitization and waste segregation',
+        'Active deployment at Kaizen Research Labs'
+      ]
+    },
+    {
+      icon: 'fa-solid fa-book-bookmark',
+      title: 'Office & Industrial Stationery Supply',
+      category: 'Commercial Supplies',
+      desc: 'One-stop supply partner providing factory compliance stationery, logbooks, operational forms, and day-to-day office consumables.',
+      benefits: [
+        'Factory Registers, Logbooks & Compliance Forms',
+        'Muster rolls, inspection sheets, and shift registers',
+        'Corporate office stationery & computer consumables',
+        'Scheduled doorstep monthly delivery'
+      ]
     },
     {
       icon: 'fa-solid fa-screwdriver-wrench',
       title: 'Technical & Engineering Manpower',
       category: 'Skilled Trades',
       desc: 'Certified ITI and Diploma technicians ready for precision shop-floor tasks across automotive, leather, heavy machinery, and chemical plants.',
-      benefits: ['CNC/VMC Operators & Machinists', 'Industrial Fitters & Welders', 'Electrical Maintenance Engineers']
+      benefits: [
+        'CNC/VMC Operators & Machinists',
+        'Industrial Fitters, Turners & Welders',
+        'Electrical & Mechanical Maintenance Engineers'
+      ]
     },
     {
-      icon: 'fa-solid fa-conveyor-belt',
+      icon: 'fa-solid fa-industry',
       title: 'Assembly Line & Production Crews',
-      category: 'Electronics & Textiles',
-      desc: 'Dedicated male and female workforce teams skilled in high-precision assembly, packaging, labeling, and quality visual inspection.',
-      benefits: ['Tailored male/female shift balance', 'Dexterity and high productivity', 'Low attrition & disciplined attendance']
-    },
-    {
-      icon: 'fa-solid fa-boxes-stacked',
-      title: 'Warehouse & Logistics Helpers',
-      category: 'Supply Chain Hubs',
-      desc: 'Robust manpower for logistics parks, freight terminals, and distribution centers in Sriperumbudur and Vanagaram.',
-      benefits: ['Loading & Unloading crews', 'Material handling & pallet shifting', 'Inventory cycle counting staff']
-    },
-    {
-      icon: 'fa-solid fa-broom',
-      title: 'Industrial Housekeeping & 5S Facility Care',
-      category: 'Facility Hygiene',
-      desc: 'Professional cleaning staff dedicated to maintaining pristine factory shop-floors, sanitized washrooms, corporate offices, and cafeteria hygiene.',
-      benefits: ['Mechanized floor cleaning operators', 'Chemical & safety compliant handling', 'Daily hygiene audit reports']
+      category: 'Manufacturing Support',
+      desc: 'High-dexterity male and female workforce teams skilled in continuous assembly line operations, zero-defect quality inspection, and packaging.',
+      benefits: [
+        'Proven assembly staffing (e.g. SAME DEUTZ-FAHR India, Ranipet)',
+        'Shift-ready teams with 98.5% attendance stability',
+        'Tailored male/female shift allocation'
+      ]
     },
     {
       icon: 'fa-solid fa-file-shield',
       title: 'Payroll & Statutory HR Outsourcing',
       category: 'Compliance Management',
       desc: 'End-to-end administration of wage disbursement, monthly PF & ESI challans, factory act compliance, and worker insurance coverage.',
-      benefits: ['100% statutory indemnification', 'Monthly transparent wage registers', 'Dispute-free workforce relations']
+      benefits: [
+        '100% EPFO (TBVLR3986706000) & ESIC (51002739420000999) compliance',
+        'GSTIN: 33AVOPY6162A1ZE invoicing with complete challans',
+        'Total indemnification against labor notices'
+      ]
     }
   ];
 
