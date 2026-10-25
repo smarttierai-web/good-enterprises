@@ -1,0 +1,330 @@
+<!-- ==========================================================================
+     WORKFORCE & OPERATIONS GALLERY
+     Live Deployment Showcase & Available Personnel
+     ========================================================================== -->
+
+<!-- Hero Section -->
+<section class="gallery-hero">
+  <div class="container gallery-hero-inner">
+    <div class="gallery-badge-top">
+      <span class="live-dot-pulse"></span>
+      <span>REAL-TIME INDUSTRIAL WORKFORCE ROSTER</span>
+    </div>
+
+    <h1 class="gallery-title">Workforce & Operations Gallery</h1>
+    <div class="heading-line center"></div>
+    <p class="gallery-subtitle">
+      Verified skilled, semi-skilled, and support personnel ready for rapid deployment across Tamil Nadu's prime industrial manufacturing belts.
+    </p>
+
+    <!-- Key Metrics Ribbon -->
+    <div class="gallery-stats-ribbon">
+      <div class="stat-pill">
+        <i class="fa-solid fa-users-viewfinder"></i>
+        <div>
+          <span class="stat-num">460+</span>
+          <span class="stat-lbl">Active Roster</span>
+        </div>
+      </div>
+      <div class="stat-pill">
+        <i class="fa-solid fa-bolt-lightning"></i>
+        <div>
+          <span class="stat-num">24 - 48h</span>
+          <span class="stat-lbl">Rapid Mobilization</span>
+        </div>
+      </div>
+      <div class="stat-pill">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div>
+          <span class="stat-num">100%</span>
+          <span class="stat-lbl">Biometric & ESI/PF Verified</span>
+        </div>
+      </div>
+      <div class="stat-pill">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+          <span class="stat-num">6 Hubs</span>
+          <span class="stat-lbl">Ranipet, Ambattur, Sriperumbudur</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Gallery Section -->
+<section class="gallery-main-section">
+  <div class="container">
+
+    <!-- Category Filter Bar -->
+    <div class="gallery-filters-wrapper">
+      <div class="filters-scroll">
+        <button 
+          *ngFor="let cat of categories" 
+          type="button" 
+          class="filter-tab-btn" 
+          [class.active]="activeCategory === cat.id"
+          (click)="setCategory(cat.id)">
+          <span>{{ cat.label }}</span>
+          <span class="filter-count-badge">{{ cat.count }}</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Active Filter Summary -->
+    <div class="filter-status-row">
+      <span class="results-text">
+        Showing <strong>{{ filteredProfiles.length }}</strong> workforce categories ready for onboarding
+      </span>
+      <span class="deployment-note">
+        <i class="fa-solid fa-circle-check text-green"></i> 100% statutory compliant with instant ESI / EPF coverage
+      </span>
+    </div>
+
+    <!-- Gallery Cards Grid -->
+    <div class="gallery-grid">
+      <div class="workforce-gallery-card" *ngFor="let item of filteredProfiles">
+        
+        <!-- Image Container with Overlays -->
+        <div class="card-media" (click)="openPreview(item)">
+          <img [src]="item.image" [alt]="item.title" class="gallery-card-img" loading="lazy">
+          
+          <!-- Live Available Badge -->
+          <div class="availability-badge">
+            <span class="live-dot-pulse"></span>
+            <span>{{ item.status }}</span>
+          </div>
+
+          <!-- Capacity Badge -->
+          <div class="capacity-pill">
+            <i class="fa-solid fa-user-check"></i> {{ item.availableCount }}
+          </div>
+
+          <!-- Hover Overlay -->
+          <div class="media-hover-overlay">
+            <span class="overlay-zoom-btn">
+              <i class="fa-solid fa-expand"></i> View Crew Details
+            </span>
+          </div>
+        </div>
+
+        <!-- Card Content Body -->
+        <div class="card-details">
+          
+          <div class="card-meta-top">
+            <span class="cat-chip">{{ item.categoryLabel }}</span>
+            <span class="turnaround-chip"><i class="fa-solid fa-clock"></i> {{ item.turnaround }}</span>
+          </div>
+
+          <h3 class="card-role-title">{{ item.title }}</h3>
+
+          <p class="card-desc">{{ item.shortDesc }}</p>
+
+          <!-- Quick Parameters Table -->
+          <div class="specs-mini-table">
+            <div class="spec-row">
+              <span class="spec-label"><i class="fa-solid fa-clock-rotate-left"></i> Shifts:</span>
+              <span class="spec-value">{{ item.shifts }}</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label"><i class="fa-solid fa-location-crosshairs"></i> Hubs:</span>
+              <span class="spec-value">{{ item.location }}</span>
+            </div>
+          </div>
+
+          <!-- Key Skills Tags -->
+          <div class="skills-wrap">
+            <span class="skill-tag" *ngFor="let s of item.skills.slice(0, 3)">{{ s }}</span>
+            <span class="skill-tag more-tag" *ngIf="item.skills.length > 3">+{{ item.skills.length - 3 }} more</span>
+          </div>
+
+          <!-- Compliance Badges -->
+          <div class="compliance-row">
+            <span class="comp-badge"><i class="fa-solid fa-id-card"></i> Aadhaar Verified</span>
+            <span class="comp-badge"><i class="fa-solid fa-file-shield"></i> EPFO / ESIC</span>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="card-actions">
+            <button type="button" class="btn-deploy" (click)="requestCrew(item)">
+              <i class="fa-solid fa-paper-plane"></i> Deploy This Crew
+            </button>
+            <button type="button" class="btn-inspect" (click)="openPreview(item)" title="Inspect Profile">
+              <i class="fa-solid fa-circle-info"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     VERIFIED REQUISITION & MOBILIZATION STANDARDS
+     ========================================================================== -->
+<section class="deployment-standards-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="badge-subtitle">ZERO PRODUCTION DOWNTIME</span>
+      <h2 class="sub-heading text-center">How We Mobilize Available Personnel</h2>
+      <div class="heading-line center"></div>
+      <p class="section-lead-center">
+        Our proprietary sourcing and vetting framework guarantees deployable candidates ready to report on shift without delay:
+      </p>
+    </div>
+
+    <div class="standards-grid">
+      <div class="standard-card">
+        <div class="standard-num">01</div>
+        <div class="standard-icon"><i class="fa-solid fa-fingerprint"></i></div>
+        <h4 class="standard-title">Aadhaar Biometric Check</h4>
+        <p class="standard-desc">
+          Instant authentication of national identity, age verification, permanent address, and bank account seeding for compliant direct wage remittance.
+        </p>
+      </div>
+
+      <div class="standard-card">
+        <div class="standard-num">02</div>
+        <div class="standard-icon"><i class="fa-solid fa-certificate"></i></div>
+        <h4 class="standard-title">Trade Marksheet Verification</h4>
+        <p class="standard-desc">
+          Rigorous physical verification of ITI diplomas, state board marksheets, and industrial apprentice certificates before workshop assignment.
+        </p>
+      </div>
+
+      <div class="standard-card">
+        <div class="standard-num">03</div>
+        <div class="standard-icon"><i class="fa-solid fa-shield-cat"></i></div>
+        <h4 class="standard-title">Police & Conduct Clearance</h4>
+        <p class="standard-desc">
+          Local jurisdictional police clearance reports and past employment verification to preserve workplace discipline and safety standards.
+        </p>
+      </div>
+
+      <div class="standard-card">
+        <div class="standard-num">04</div>
+        <div class="standard-icon"><i class="fa-solid fa-kit-medical"></i></div>
+        <h4 class="standard-title">Medical Fitness & PPE</h4>
+        <p class="standard-desc">
+          Pre-deployment occupational medical screening, vision tests, and comprehensive safety briefing including helmet, steel-toe boot, and eyewear usage.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     FAST REQUISITION CTA SECTION
+     ========================================================================== -->
+<section class="gallery-cta-section">
+  <div class="container">
+    <div class="cta-inner-card">
+      <div class="cta-text-side">
+        <span class="cta-badge">IMMEDIATE FACTORY ONBOARDING</span>
+        <h2 class="cta-heading">Need Manpower Deployed in 24 - 48 Hours?</h2>
+        <p class="cta-lead">
+          Share your required headcount, skill trade, and shift schedule. Our field coordinators will arrange candidates and facilitate immediate documentation.
+        </p>
+        
+        <div class="cta-phone-links">
+          <a href="tel:7418945855" class="cta-tel-pill"><i class="fa-solid fa-phone"></i> 74189 45855</a>
+          <a href="tel:8122045855" class="cta-tel-pill"><i class="fa-solid fa-phone"></i> 81220 45855</a>
+          <a href="tel:7845545855" class="cta-tel-pill"><i class="fa-solid fa-phone"></i> 78455 45855</a>
+        </div>
+      </div>
+
+      <div class="cta-action-side">
+        <button type="button" class="btn-pill-white" (click)="openGeneralRequirement()">
+          <i class="fa-solid fa-paper-plane"></i> Submit Requisition Form
+        </button>
+        <a href="/assets/company-profile.pdf" target="_blank" download="Good-Enterprises-Company-Profile.pdf" class="btn-pill-outline-white">
+          <i class="fa-solid fa-file-pdf"></i> Download Profile (PDF)
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     INTERACTIVE CREW LIGHTBOX / MODAL
+     ========================================================================== -->
+<div class="gallery-lightbox-backdrop" *ngIf="previewItem" (click)="closePreview()">
+  <div class="gallery-lightbox-modal" (click)="$event.stopPropagation()">
+    
+    <button type="button" class="lightbox-close-btn" (click)="closePreview()" aria-label="Close dialog">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="lightbox-layout">
+      <!-- Left: Large Image Preview -->
+      <div class="lightbox-image-wrap">
+        <img [src]="previewItem.image" [alt]="previewItem.title" class="lightbox-img">
+        <div class="lightbox-img-overlay">
+          <div class="lightbox-status-tag">
+            <span class="live-dot-pulse"></span>
+            <span>{{ previewItem.status }}</span>
+          </div>
+          <div class="lightbox-count-tag">
+            <i class="fa-solid fa-user-check"></i> {{ previewItem.availableCount }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Detailed Specifications -->
+      <div class="lightbox-info-wrap">
+        <div class="lightbox-header">
+          <span class="cat-chip">{{ previewItem.categoryLabel }}</span>
+          <h2 class="lightbox-title">{{ previewItem.title }}</h2>
+          <p class="lightbox-desc">{{ previewItem.shortDesc }}</p>
+        </div>
+
+        <div class="lightbox-specs-grid">
+          <div class="lb-spec-card">
+            <span class="lb-spec-lbl"><i class="fa-solid fa-bolt-lightning text-magenta"></i> Turnaround</span>
+            <span class="lb-spec-val">{{ previewItem.turnaround }}</span>
+          </div>
+          <div class="lb-spec-card">
+            <span class="lb-spec-lbl"><i class="fa-solid fa-business-time text-magenta"></i> Shifts</span>
+            <span class="lb-spec-val">{{ previewItem.shifts }}</span>
+          </div>
+          <div class="lb-spec-card">
+            <span class="lb-spec-lbl"><i class="fa-solid fa-briefcase text-magenta"></i> Experience</span>
+            <span class="lb-spec-val">{{ previewItem.experience }}</span>
+          </div>
+          <div class="lb-spec-card">
+            <span class="lb-spec-lbl"><i class="fa-solid fa-location-dot text-magenta"></i> Location</span>
+            <span class="lb-spec-val">{{ previewItem.location }}</span>
+          </div>
+        </div>
+
+        <!-- Skills List -->
+        <div class="lightbox-section">
+          <h4 class="lightbox-sec-title"><i class="fa-solid fa-screwdriver-wrench"></i> Key Competencies & Equipment</h4>
+          <div class="skills-wrap">
+            <span class="skill-tag active" *ngFor="let s of previewItem.skills">{{ s }}</span>
+          </div>
+        </div>
+
+        <!-- Statutory Compliance Undertaking -->
+        <div class="lightbox-section">
+          <h4 class="lightbox-sec-title"><i class="fa-solid fa-shield-check"></i> Statutory Verification Standard</h4>
+          <div class="compliance-chips-wrap">
+            <span class="comp-pill" *ngFor="let c of previewItem.compliance">
+              <i class="fa-solid fa-circle-check text-green"></i> {{ c }}
+            </span>
+          </div>
+        </div>
+
+        <!-- Direct Actions -->
+        <div class="lightbox-actions">
+          <button type="button" class="btn-primary w-100" (click)="requestCrew(previewItem)">
+            <i class="fa-solid fa-paper-plane"></i> Deploy This Crew for Our Facility
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
