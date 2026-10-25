@@ -382,7 +382,7 @@
   border: 1.5px solid #ebd8f5;
   box-shadow: 0 4px 18px rgba(38, 4, 71, 0.05);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
   transition: var(--transition);
 }
@@ -405,12 +405,15 @@
   font-size: 1.4rem;
   flex-shrink: 0;
   box-shadow: 0 4px 12px rgba(184, 27, 108, 0.3);
+  margin-top: 2px;
 }
 
 .client-info {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  flex: 1;
+  min-width: 0;
 }
 
 .client-name {
@@ -419,6 +422,7 @@
   color: #240242;
   margin: 0;
   line-height: 1.3;
+  word-break: break-word;
 }
 
 .client-location {
@@ -435,14 +439,16 @@
 
 .client-deployment-badge {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 6px;
   background: #fbf2fd;
   border: 1px solid #ebd1f7;
-  padding: 4px 10px;
-  border-radius: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
   margin-top: 6px;
-  width: max-content;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .badge-label {
@@ -556,6 +562,11 @@
     grid-template-columns: 1fr;
     gap: 32px;
   }
+
+  .clients-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -599,6 +610,54 @@
   .workforce-card {
     padding: 16px 12px;
     min-height: 100px;
+  }
+
+  .clients-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .client-card {
+    padding: 16px;
+    gap: 12px;
+    border-radius: 14px;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .client-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    margin-top: 2px;
+  }
+
+  .client-name {
+    font-size: 1.02rem;
+    line-height: 1.35;
+  }
+
+  .client-deployment-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 6px 10px;
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  .badge-label {
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
+
+  .badge-value {
+    font-size: 0.82rem;
+    line-height: 1.3;
   }
 
   .cta-description {

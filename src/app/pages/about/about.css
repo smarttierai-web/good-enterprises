@@ -439,7 +439,7 @@
   border: 1.5px solid #ebd8f5;
   box-shadow: 0 4px 18px rgba(38, 4, 71, 0.05);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 18px;
   transition: var(--transition);
 }
@@ -461,12 +461,15 @@
   color: #ffffff;
   font-size: 1.35rem;
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .cust-content {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
 }
 
 .cust-title {
@@ -474,18 +477,22 @@
   font-weight: 800;
   color: #260447;
   margin: 0;
+  line-height: 1.35;
+  word-break: break-word;
 }
 
 .cust-service-badge {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 6px;
   background: #fbf2fd;
   border: 1px solid #ebd1f7;
-  padding: 4px 10px;
-  border-radius: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
   margin-top: 4px;
-  width: max-content;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .svc-lbl {
@@ -553,10 +560,64 @@
   .locations-grid { grid-template-columns: 1fr 1fr; }
   .page-hero-title { font-size: 1.85rem; }
   .mv-cards-row { grid-template-columns: 1fr; }
-  .customers-two-cards { grid-template-columns: 1fr; }
+  .customers-two-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .cust-card {
+    padding: 20px;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .cust-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
   .registrations-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 580px) {
   .locations-grid { grid-template-columns: 1fr; }
+  .customers-two-cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    width: 100%;
+  }
+  .cust-card {
+    padding: 16px;
+    gap: 12px;
+    border-radius: 14px;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .cust-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    margin-top: 2px;
+  }
+  .cust-title {
+    font-size: 1.02rem;
+    line-height: 1.35;
+  }
+  .cust-service-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 6px 10px;
+    width: 100%;
+    margin-top: 6px;
+  }
+  .svc-lbl {
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
+  .svc-val {
+    font-size: 0.82rem;
+    line-height: 1.3;
+  }
 }
